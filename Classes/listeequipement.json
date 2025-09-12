@@ -1,0 +1,58 @@
+[
+    {
+        "nom": "protège-tibia",
+        "categorie": "bouclier",
+        "bonus_attaque": 0,
+        "bonus_defense": 8,
+        "bonus_vie": 3,
+        "coef_rarete": "rare"
+    },
+    {
+        "nom": "crampons fer",
+        "categorie": "arme",
+        "bonus_attaque": 6,
+        "bonus_defense": 2,
+        "bonus_vie": 0,
+        "coef_rarete": "Épique"
+    },
+    {
+        "nom": "Powerade",
+        "categorie": "potion",
+        "bonus_attaque": 2,
+        "bonus_defense": 2,
+        "bonus_vie": 2,
+        "coef_rarete": "rare"
+    },
+    {
+        "nom": "Gants",
+        "categorie": "bouclier",
+        "bonus_attaque": 0,
+        "bonus_defense": 6,
+        "bonus_vie": 3,
+        "coef_rarete": "Epique"
+    },
+    {
+        "nom": "crane chauve",
+        "categorie": "arme",
+        "bonus_attaque": 8,
+        "bonus_defense": 0,
+        "bonus_vie": 0,
+        "coef_rarete": "Légendaire"
+    },
+    {
+        "nom": "Insulte",
+        "categorie": "arme",
+        "bonus_attaque": 15,
+        "bonus_defense": 0,
+        "bonus_vie": 0,
+        "coef_rarete": "Légendaire"
+    },
+    {
+        "nom": "gourde",
+        "categorie": "potion",
+        "bonus_attaque": 0,
+        "bonus_defense": 4,
+        "bonus_vie": 12,
+        "coef_rarete": "Epique"
+    }
+]
