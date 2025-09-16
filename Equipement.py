@@ -31,13 +31,9 @@ class Equipement :
         self.atk = int(self.bonus_attaque * self.coef)
         self.defense = int(self.bonus_defense * self.coef)
         self.vie = int(self.bonus_vie * self.coef)
-        
-
-
 
     def presentation (self) :
  
-
         return f"{self.nom}, {self.categorie}, {self.rarete}  / +{self.atk} ATK / +{self.defense} DEF / +{self.vie} Pv en plus"
     
     def liste_equipement(listeequipement):
