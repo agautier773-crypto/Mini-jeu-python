@@ -1,6 +1,7 @@
 from Equipement import Equipement
 import json 
 import random
+from Gardien import Gardien
 
 class Joueur : 
     nom : str
@@ -17,27 +18,24 @@ class Joueur :
               "Légendaire":2.0
     }
     
-    def __init__(self, nom : str, classe :str):
+    def __init__(self, nom : str):
         self.nom = nom 
         self.equipement = []
         self.sous_boost = False
         self.attaque = self.attaque_base
-        self.classe = classe 
-        self.choix_classe(classe)
+        
         # print (f"Création du perso {nom} avec la classe : {classe}")
     
-    def changer_nom(self) :
-        nouveau_nom = input ("Saisissez le nom de votre personnage : ")
-        if len(nouveau_nom) > 20 :
-            return f"Le nom est trop long (20 caractère max)"
-        self.nom = nouveau_nom
+    # def changer_nom(self) :
+    #     nouveau_nom = input ("Saisissez le nom de votre personnage : ")
+    #     if len(nouveau_nom) > 20 :
+    #         return f"Le nom est trop long (20 caractère max)"
+    #     self.nom = nouveau_nom
 
-    def choix_classe (self, classe) :
-        self.classe = classe
+    def choix_classe (self, nom) :
+        
         if classe == "Gardien" :
-            self.attaque_base = 8
-            self.defense = 33
-            self.vie = 120
+            perso = Gardien(self.nom)
         elif classe == "Defenseur" :
             self.attaque_base = 12 
             self.defense = 37
@@ -55,32 +53,32 @@ class Joueur :
             self.defense = 25 
             self.vie = 100 
    
-    def creer_perso():
+    # def creer_perso():
 
-        nom = input ("Saisissez le nom de votre personnage : ")
-        print("Choisissez une classe :")
-        print(f""" 1/ Gardien : ATK : 8
-                DEF : 33
-                Vie : 120
-        2/ Defenseur : ATK : 12
-                DEF : 37
-                Vie : 110
-        3/ Milieu : ATK : 20
-                DEF : 30
-                Vie : 100
-        4/ Attaquant : ATK : 35
-                DEF : 12
-                Vie : 90
-          """)
-        choix = input("Votre Choix : ")
-        classes = {"1" : "Gardien",
-               "2" : "Defenseur",
-               "3" : "Milieu",
-               "4" : "Attaquant"
-               }
-        classe = classes.get(choix, "Gardien")
-        print(f"{nom} sera un {classe}")
-        return Joueur(nom, classe)
+    #     nom = input ("Saisissez le nom de votre personnage : ")
+    #     print("Choisissez une classe :")
+    #     print(f""" 1/ Gardien : ATK : 8
+    #             DEF : 33
+    #             Vie : 120
+    #     2/ Defenseur : ATK : 12
+    #             DEF : 37
+    #             Vie : 110
+    #     3/ Milieu : ATK : 20
+    #             DEF : 30
+    #             Vie : 100
+    #     4/ Attaquant : ATK : 35
+    #             DEF : 12
+    #             Vie : 90
+    #       """)
+    #     choix = input("Votre Choix : ")
+    #     classes = {"1" : "Gardien",
+    #            "2" : "Defenseur",
+    #            "3" : "Milieu",
+    #            "4" : "Attaquant"
+    #            }
+    #     classe = classes.get(choix, "Gardien")
+    #     print(f"{nom} sera un {classe}")
+    #     return Joueur(nom, classe)
 
 
     def equiper (self) :
