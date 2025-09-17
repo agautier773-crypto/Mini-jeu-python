@@ -79,24 +79,28 @@ class Joueur :
             print(f"{self.nom} a pris la potion {equipement.presentation}")   
         else :
             print("Aucun equipement trouvé")
-                                                       
-    def retirer(self):
-            print("\n Retirer un équipement")
-            if not self.equipement :
-                print("Aucun equipement trouvé")
-            else:
-                for i, eq in enumerate(self.equipement):                        
-                    print(f" {i +1}.{eq.presentation()}")
-                    choix_eq = input("Choisissez un equipement à retirer (numéros) : ")
-                    if choix_eq.isdigit() : 
-                        numero = int(choix_eq) - 1
-                        if 0 <= numero < len(self.equipement) : 
-                            stuff_a_retirer = self.equipement[numero]                             
-                            self.equipement.remove(stuff_a_retirer)
-                            self.attaque -= stuff_a_retirer.atk
-                            self.defense -= stuff_a_retirer.defense
-                            self.vie -= stuff_a_retirer.vie  
-                            print(f"Equipement {stuff_a_retirer.presentation()} a été retiré de votre personnage")    
+    
+    def retirer (self, equipement) :
+        from Arme import Arme
+        from Bouclier import Bouclier
+        from Potion import Potion
+        print("Retirer Equipement")
+        if not equipement in self.equipement:
+            return f"Aucun equipement trouvé"
+        if isinstance (equipement, Arme):
+            self.attaque_base -= equipement.bonus_attaque
+            self.attaque = self.attaque_base
+            print(f"{self.nom} a retiré l'arme {equipement.presentation()}")
+        elif isinstance(equipement, Bouclier):
+            self.defense -= equipement.bonus_defense            
+            print(f"{self.nom} a retiré le bouclier {equipement.presentation()}")
+        elif isinstance(equipement, Potion):
+            self.vie -= equipement.bonus_vie            
+            print(f"{self.nom} a retiré la potion {equipement.presentation}")   
+        else :
+            print("Aucun equipement trouvé")
+            return 
+        self.equipement.remove(equipement)                                                 
     
     def attaquer (self, cible) :
         if cible.vie <= 0 :

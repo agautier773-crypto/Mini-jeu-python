@@ -81,5 +81,23 @@ class Jeu :
         else:
             print("Choix invalide")
             
+    def retirer_equipement (self):
+        if not self.equipement : 
+            print("Aucun equipement trouvé")
+            return 
+        print("Equipement actuellement équipés :")
+        for i, eq in enumerate(self.equipement,1):
+            print(f"{i}.{eq.presentation()}")
+
+        choix_eq = input ("Quel equipement voulez vous retirer : ")  
+        if choix_eq.isdigit():
+            index = int(choix_eq) - 1
+            if 0 <= index < len(self.equipement):
+                equipement_a_retirer = self.equipement[index]
+                self.retirer(equipement_a_retirer)               
+            else :
+                print("Choix invalide")
+        else:
+            print("Choix invalide")
                 
 

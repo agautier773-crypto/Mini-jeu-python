@@ -36,21 +36,6 @@ class Equipement :
  
         return f"{self.nom}, {self.categorie}, {self.rarete}  / +{self.atk} ATK / +{self.defense} DEF / +{self.vie} Pv en plus"
     
-    def liste_equipement(listeequipement):
-        with open (listeequipement, "r", encoding = "utf-8") as f :
-            donnees = json.load(f)
-        equipements = [] 
-        for item in donnees :
-            eq = Equipement(
-                nom = item["nom"],
-                categorie = item["categorie"],
-                bonus_attaque = item["bonus_attaque"],
-                bonus_defense = item["bonus_defense"],
-                bonus_vie = item ["bonus_vie"],
-                coef_rarete = item["coef_rarete"]
-            )
-            equipements.append(eq)
-        return equipements
 
 
          

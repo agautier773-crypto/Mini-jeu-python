@@ -64,7 +64,9 @@ class Menu :
                 case "2.b":
                     pass 
                 case "2.c":
-                    Joueur.retirer(self.perso1, self.perso2)
+                    Jeu.retirer_equipement(self.perso1)
+                    Jeu.retirer_equipement(self.perso2)
+                
 
                 case "3.b":
                     combat = Jeu(self.perso1, self.perso2)
