@@ -1,6 +1,6 @@
 from Joueur import Joueur 
 from Equipement import Equipement
-
+from Jeu import Jeu
 
 perso1 = Joueur.creer_perso()
 perso2 = Joueur.creer_perso()
@@ -67,7 +67,8 @@ def menu() :
                 Joueur.retirer(perso1, perso2)
 
             case "3.b":
-                perso1.combattre(perso1,perso2)
+                combat = Jeu(perso1, perso2)
+                combat.combattre(perso1, perso2)
           
                
 menu()
