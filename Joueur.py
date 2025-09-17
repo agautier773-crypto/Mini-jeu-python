@@ -58,34 +58,25 @@ class Joueur :
                 print("Choix invalide ")
                 return Joueur(nom)
 
-    def equiper (self) :
-            
-        print("\n Ajout d'un nouvel Equipement :")
-        liste = Equipement.liste_equipement("listeequipement.json")            
-        if not liste :
+    def equiper (self, equipement) :
+        from Arme import Arme
+        from Bouclier import Bouclier
+        from Potion import Potion
+        if isinstance (equipement, Arme):
+            self.attaque_base += equipement.bonus_attaque
+            self.attaque = self.attaque_base
+            self.equipement.append(equipement)
+            print(f"{self.nom} est équipé de l'arme {equipement.presentation()}")
+        elif isinstance(equipement, Bouclier):
+            self.defense += equipement.bonus_defense
+            self.equipement.append(equipement)
+            print(f"{self.nom} est équipé du bouclier {self.equipement}")
+        elif isinstance(equipement, Potion):
+            self.vie += equipement.bonus_vie
+            self.equipement.append(equipement)
+            print(f"{self.nom} a pris la potion {self.equipement}")   
+        else :
             print("Aucun equipement trouvé")
-            return
-        else : 
-            print("Voici les equipements disponibles : ")           
-        for i, eq in enumerate(liste):
-            print(f" {i +1}.{eq.presentation()}")
-        choix_eq = input("Choisissez un equipement à ajouter (numéros) : ")
-        if choix_eq.isdigit() : 
-            numero = int(choix_eq) - 1
-            if 0 <= numero < len(liste): 
-                equipement_choisi = liste[numero]
-                self.equipement.append(equipement_choisi)            
-                self.attaque_base += equipement_choisi.atk
-                self.defense += equipement_choisi.defense
-                self.vie += equipement_choisi.vie                        
-                print(f" \n {self.nom} a choisi l'équipement {equipement_choisi.nom}"
-            f"(+ATK {equipement_choisi.atk}, DEF {equipement_choisi.defense}, PV {equipement_choisi.vie})")     
-                return
-            else : 
-                print("Numéro invalide")
-        else : 
-            print("Numéro invalide")              
-    
                                                        
     def retirer(self):
             print("\n Retirer un équipement")

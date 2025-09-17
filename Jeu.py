@@ -1,5 +1,9 @@
 import random 
 from Joueur import Joueur
+from Arme import Arme
+from Bouclier import Bouclier
+from Potion import Potion
+
 class Jeu :
 
     def __init__(self, perso1, perso2):
@@ -45,3 +49,37 @@ class Jeu :
                 print(f"{p1.nom} est mort sous les coups de {p2.nom}")
                 break 
             tour += 1
+
+    def choix_equipement (self):
+        print("Quel type d'équipement voulez-vous ? :")
+        print("1 : Arme")
+        print("2 : Bouclier")
+        print("3 : Potion")
+        choix = input ("Votre Choix : ")
+        match choix:
+            case "1":
+                liste = Arme.disponible()
+            case "2":
+                liste = Bouclier()
+            case "3": 
+                liste = Potion()
+            case _: 
+                print("Choix invalide")
+                return 
+        print("Liste des Equipements disponibles : ")
+        for i, eq in enumerate(liste, 1):
+            print(f"{i}.{eq.presentation()}")
+        choix_eq = input("Choisissez un equipement : ")
+        if choix_eq.isdigit():
+            index = int(choix_eq) - 1
+            if 0 <= index < len(liste):
+                equipement_choisi = liste[index]
+                
+                self.equiper(equipement_choisi)
+            else :
+                print("Choix invalide")
+        else:
+            print("Choix invalide")
+            
+                
+

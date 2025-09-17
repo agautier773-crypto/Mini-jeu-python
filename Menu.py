@@ -56,11 +56,11 @@ class Menu :
                         print(f"Stat du personnage {personnage.nom}: Vie {personnage.vie}, ATK {personnage.attaque_base}, DEF {personnage.defense}")            
                     else :
                         print("Aucun Equipement trouvé !")
-                case "2.a":                
-                    self.perso1.equiper()
-                    self.perso2.equiper()
-                
-    
+                case "2.a":  
+                                
+                    Jeu.choix_equipement(self.perso1)
+                    Jeu.choix_equipement(self.perso2)
+                    
                 case "2.b":
                     pass 
                 case "2.c":
