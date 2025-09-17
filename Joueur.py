@@ -1,7 +1,7 @@
 from Equipement import Equipement
 import json 
 import random
-from Gardien import Gardien
+
 
 class Joueur : 
     nom : str
@@ -32,54 +32,31 @@ class Joueur :
     #         return f"Le nom est trop long (20 caractère max)"
     #     self.nom = nouveau_nom
 
-    def choix_classe (self, nom) :
-        
-        if classe == "Gardien" :
-            perso = Gardien(self.nom)
-        elif classe == "Defenseur" :
-            self.attaque_base = 12 
-            self.defense = 37
-            self.vie = 110
-        elif classe == "Milieu" : 
-            self.attaque_base = 20
-            self.defense = 30
-            self.vie = 100
-        elif classe == "Attaquant" :
-            self.attaque_base = 35 
-            self.defense = 12
-            self.vie = 90
-        else : 
-            self.attaque_base = 25 
-            self.defense = 25 
-            self.vie = 100 
-   
-    # def creer_perso():
+    def creer_perso(): 
+        from Gardien import Gardien
+        from Defenseur import Defenseur
+        from Milieu import Milieu 
+        from Attaquant import Attaquant 
 
-    #     nom = input ("Saisissez le nom de votre personnage : ")
-    #     print("Choisissez une classe :")
-    #     print(f""" 1/ Gardien : ATK : 8
-    #             DEF : 33
-    #             Vie : 120
-    #     2/ Defenseur : ATK : 12
-    #             DEF : 37
-    #             Vie : 110
-    #     3/ Milieu : ATK : 20
-    #             DEF : 30
-    #             Vie : 100
-    #     4/ Attaquant : ATK : 35
-    #             DEF : 12
-    #             Vie : 90
-    #       """)
-    #     choix = input("Votre Choix : ")
-    #     classes = {"1" : "Gardien",
-    #            "2" : "Defenseur",
-    #            "3" : "Milieu",
-    #            "4" : "Attaquant"
-    #            }
-    #     classe = classes.get(choix, "Gardien")
-    #     print(f"{nom} sera un {classe}")
-    #     return Joueur(nom, classe)
-
+        nom = input ("Saisir le nom de votre personnage :")
+        print(f"""Choisissez une Classe :
+              1 : Attaquant (ATK: 35/ DEF: 12/ VIE: 90)
+              2 : Milieu (ATK: 20/ DEF: 30/ VIE: 100)
+              3 : Defenseur (ATK: 12/ DEF: 37/ VIE: 110)
+              4 : Gardien (ATK: 10/ DEF: 40/ VIE: 120)""")
+        choix = input("Votre Choix : ")
+        match choix :
+            case "1":
+                return Attaquant(nom)
+            case "2":
+                return Milieu(nom)
+            case "3":
+                return Defenseur(nom)
+            case "4":
+                return Gardien(nom)
+            case _:
+                print("Choix invalide ")
+                return Joueur(nom)
 
     def equiper (self) :
             
@@ -102,7 +79,7 @@ class Joueur :
                 self.defense += equipement_choisi.defense
                 self.vie += equipement_choisi.vie                        
                 print(f" \n {self.nom} a choisi l'équipement {equipement_choisi.nom}"
-                f"(+ATK {equipement_choisi.atk}, DEF {equipement_choisi.defense}, PV {equipement_choisi.vie})")     
+            f"(+ATK {equipement_choisi.atk}, DEF {equipement_choisi.defense}, PV {equipement_choisi.vie})")     
                 return
             else : 
                 print("Numéro invalide")
@@ -143,7 +120,7 @@ class Joueur :
         return f"{self.nom} a attaquer {cible.nom} infligeant {degat}, il reste {cible.vie} Pv a {cible.nom}"
         
     def presentation (self) :
-        return f"Je suis {self.nom}, j'ai {self.vie} point de vie, avec {self.attaque} d'attaque, {self.defense} de défense et {self.vie} de points de vie"
+        return f"Je suis {self.nom}, avec {self.attaque_base} d'attaque, {self.defense} de défense et {self.vie} de points de vie"
         
     def soins (self) :
         if self.vie == 100:
@@ -200,9 +177,3 @@ class Joueur :
                 break 
             tour += 1
 
-        # if vie1 <= 0 and vie2 <= 0 :
-        #     print("Match nul les deux sont deads")
-        # elif vie1 <= 0 : 
-        #     print(f"{p1.nom} est mort ce soir (comme le roi Lion)")
-        # else: 
-        #     print(f"{p2.nom} est mort ce soir (comme le roi Lion)")

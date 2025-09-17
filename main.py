@@ -4,6 +4,8 @@ from Equipement import Equipement
 
 perso1 = Joueur.creer_perso()
 perso2 = Joueur.creer_perso()
+print(perso1.presentation())
+print(perso2.presentation())
 
 def menu() : 
     while True : 
