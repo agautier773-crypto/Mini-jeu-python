@@ -60,9 +60,9 @@ class Jeu :
             case "1":
                 liste = Arme.disponible()
             case "2":
-                liste = Bouclier()
+                liste = Bouclier.disponible()
             case "3": 
-                liste = Potion()
+                liste = Potion.disponible()
             case _: 
                 print("Choix invalide")
                 return 

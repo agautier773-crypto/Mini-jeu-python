@@ -62,6 +62,8 @@ class Joueur :
         from Arme import Arme
         from Bouclier import Bouclier
         from Potion import Potion
+        if equipement in self.equipement:
+            return f"{self.nom} est déja équipé de {equipement.presentation()}"
         if isinstance (equipement, Arme):
             self.attaque_base += equipement.bonus_attaque
             self.attaque = self.attaque_base
@@ -70,11 +72,11 @@ class Joueur :
         elif isinstance(equipement, Bouclier):
             self.defense += equipement.bonus_defense
             self.equipement.append(equipement)
-            print(f"{self.nom} est équipé du bouclier {self.equipement}")
+            print(f"{self.nom} est équipé du bouclier {equipement.presentation()}")
         elif isinstance(equipement, Potion):
             self.vie += equipement.bonus_vie
             self.equipement.append(equipement)
-            print(f"{self.nom} a pris la potion {self.equipement}")   
+            print(f"{self.nom} a pris la potion {equipement.presentation}")   
         else :
             print("Aucun equipement trouvé")
                                                        
