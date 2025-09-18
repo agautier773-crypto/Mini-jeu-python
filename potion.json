@@ -1,0 +1,23 @@
+{
+     "1" : {
+        "nom" : "Powerade",
+        "bonus_vie" : 12,
+        "coef_rarete" : "Legendaire"
+    
+    },     
+    "2" :  {
+        "nom" : "Gourde",
+        "bonus_vie" : 8,
+        "coef_rarete" : "Epique"
+    },
+    "3" :  {
+        "nom" : "Alcool",
+        "bonus_vie" : 15,
+        "coef_rarete" : "Rare"
+    },
+    "4" :  {
+        "nom" : "Eau",
+        "bonus_vie" : 25,
+        "coef_rarete" : "Commun"
+    }
+}

@@ -1,0 +1,23 @@
+{
+     "1" : {
+        "nom" : "Crampons en fer",
+        "bonus_attaque" : 12,
+        "coef_rarete" : "Legendaire"
+    
+    },     
+    "2" :  {
+        "nom" : "Crane chauve",
+        "bonus_attaque" : 8,
+        "coef_rarete" : "Epique"
+    },
+    "3" :  {
+        "nom" : "Insultes",
+        "bonus_attaque" : 15,
+        "coef_rarete" : "Rare"
+    },
+    "4" :  {
+        "nom" : "powershoot",
+        "bonus_attaque" : 25,
+        "coef_rarete" : "Commun"
+    }
+}

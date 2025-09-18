@@ -1,11 +1,9 @@
 from Equipement import Equipement
+import json 
+from JsonManager import JsonManager
 
 class Arme (Equipement):
-    liste_armes = [
-        {"nom": "crampons en fer", "bonus_attaque": 6, "coef_rarete": "Epique"},
-        {"nom": "crâne chauve", "bonus_attaque" : 8, "coef_rarete": "Legendaire"},
-        {"nom": "insultes", "bonus_attaque": 25, "coef_rarete":  "Commun"}
-        ]
+
     def __init__(self, nom, bonus_attaque, coef_rarete = "Commun"):
         super().__init__(nom, "Arme")
         self.bonus_attaque = bonus_attaque
@@ -14,15 +12,14 @@ class Arme (Equipement):
     def presentation (self): 
         return f"{self.nom} (+{self.bonus_attaque} ATK)"
     
-    @classmethod
-    def disponible(cls):
-        objets = []
-        for eq in cls.liste_armes:
-            nom = eq["nom"]
-            bonus = eq["bonus_attaque"]
-            rarete = eq["coef_rarete"] if "coef_rarete" in eq else "Commun"
-            objets.append(cls(nom, bonus, rarete))
-        return objets
-
+    @staticmethod
+    def disponibles () :
+        armes = JsonManager("C:\\Users\\GAUTIER\\Desktop\\Exercice Python\\Classes\\arme.json").load()
+        liste_arme = []
+        for arme in armes.values():
+            liste_arme.append(Arme(arme["nom"],arme["bonus_attaque"],arme["coef_rarete"]))
+        # for potion in liste_potion:
+        #     # print (potion.presentation())
+        return liste_arme
 
 

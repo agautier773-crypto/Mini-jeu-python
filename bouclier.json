@@ -1,0 +1,23 @@
+{
+     "1" : {
+        "nom" : "Protège tibia",
+        "bonus_defense" : 12,
+        "coef_rarete" : "Legendaire"
+    
+    },     
+    "2" :  {
+        "nom" : "Gants",
+        "bonus_defense" : 8,
+        "coef_rarete" : "Epique"
+    },
+    "3" :  {
+        "nom" : "Ballon",
+        "bonus_defense" : 15,
+        "coef_rarete" : "Rare"
+    },
+    "4" :  {
+        "nom" : "Supporter",
+        "bonus_defense" : 25,
+        "coef_rarete" : "Commun"
+    }
+}

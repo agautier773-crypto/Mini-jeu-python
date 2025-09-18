@@ -76,7 +76,7 @@ class Joueur :
         elif isinstance(equipement, Potion):
             self.vie += equipement.bonus_vie
             self.equipement.append(equipement)
-            print(f"{self.nom} a pris la potion {equipement.presentation}")   
+            print(f"{self.nom} a pris la potion {equipement.presentation()}")   
         else :
             print("Aucun equipement trouvé")
     
@@ -96,7 +96,7 @@ class Joueur :
             print(f"{self.nom} a retiré le bouclier {equipement.presentation()}")
         elif isinstance(equipement, Potion):
             self.vie -= equipement.bonus_vie            
-            print(f"{self.nom} a retiré la potion {equipement.presentation}")   
+            print(f"{self.nom} a retiré la potion {Potion.presentation}")   
         else :
             print("Aucun equipement trouvé")
             return 

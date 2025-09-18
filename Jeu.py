@@ -58,11 +58,12 @@ class Jeu :
         choix = input ("Votre Choix : ")
         match choix:
             case "1":
-                liste = Arme.disponible()
+                liste = Arme.disponibles()
             case "2":
-                liste = Bouclier.disponible()
+                liste = Bouclier.disponibles()
             case "3": 
-                liste = Potion.disponible()
+                liste = Potion.disponibles()
+                
             case _: 
                 print("Choix invalide")
                 return 
