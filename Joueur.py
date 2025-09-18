@@ -2,7 +2,6 @@ from Equipement import Equipement
 import json 
 import random
 
-
 class Joueur : 
     nom : str
     vie = 100 
@@ -40,10 +39,10 @@ class Joueur :
 
         nom = input ("Saisir le nom de votre personnage :")
         print(f"""Choisissez une Classe :
-              1 : Attaquant (ATK: 35/ DEF: 12/ VIE: 90)
-              2 : Milieu (ATK: 20/ DEF: 30/ VIE: 100)
-              3 : Defenseur (ATK: 12/ DEF: 37/ VIE: 110)
-              4 : Gardien (ATK: 10/ DEF: 40/ VIE: 120)""")
+              1 : Attaquant (ATK: 50/ DEF: 10/ VIE: 90)
+              2 : Milieu (ATK: 30/ DEF: 20/ VIE: 120)
+              3 : Defenseur (ATK: 15/ DEF: 40/ VIE: 180)
+              4 : Gardien (ATK: 35/ DEF: 15/ VIE: 100)""")
         choix = input("Votre Choix : ")
         match choix :
             case "1":
@@ -96,7 +95,7 @@ class Joueur :
             print(f"{self.nom} a retiré le bouclier {equipement.presentation()}")
         elif isinstance(equipement, Potion):
             self.vie -= equipement.bonus_vie            
-            print(f"{self.nom} a retiré la potion {Potion.presentation}")   
+            print(f"{self.nom} a retiré la potion {equipement.presentation}")   
         else :
             print("Aucun equipement trouvé")
             return 
