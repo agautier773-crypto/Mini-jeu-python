@@ -37,6 +37,12 @@ class Equipement :
         return f"{self.nom}, {self.categorie}, {self.rarete}  / +{self.atk} ATK / +{self.defense} DEF / +{self.vie} Pv en plus"
     
 
+        # refaire une fonction pour l'ajout déquipement  
+        # ajouter le calcul des stats 
+        # faire un main avec un menu d'affichage pour avoir le choix entre créer un perso ou équipé un perso 
+        # pousser le jeu et proposer à l'utilisateur soit de prendre un perso créer soit de créer le sien 
+        # créer une possibilité de sauvegarde des persos et des équipements 
+
 
          
             

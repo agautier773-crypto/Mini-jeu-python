@@ -1,23 +1,24 @@
 {
      "1" : {
         "nom" : "Crampons en fer",
-        "bonus_attaque" : 12,
-        "coef_rarete" : "Legendaire"
+        "bonus_ATK" : 12,
+        "bonus_DEF" : 0
     
     },     
     "2" :  {
         "nom" : "Crane chauve",
-        "bonus_attaque" : 8,
-        "coef_rarete" : "Epique"
+        "bonus_ATK" : 8,
+        "bonus_DEF" : 0
     },
     "3" :  {
         "nom" : "Insultes",
-        "bonus_attaque" : 15,
-        "coef_rarete" : "Rare"
+        "bonus_ATK" : 15,
+        "bonus_DEF" : 0
     },
     "4" :  {
         "nom" : "powershoot",
-        "bonus_attaque" : 25,
-        "coef_rarete" : "Commun"
+        "bonus_ATK" : 25,
+        "bonus_DEF" : 0
+
     }
 }
